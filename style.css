@@ -1,0 +1,623 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f0f2f5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(120deg, #0056ff, #00c6ff);
+    color: white;
+}
+
+.topbar button {
+    background: white;
+    color: #0056ff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    height: 90vh;
+    background: linear-gradient(120deg, #0056ff, #00c6ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 15px 0;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    background: white;
+    color: #0056ff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* =========================
+   FORMULAIRE
+========================= */
+.form-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.form-box textarea {
+    min-height: 80px;
+}
+
+/* =========================
+   CV STRUCTURE
+========================= */
+.cv {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* =========================
+   COLONNE GAUCHE
+========================= */
+.left {
+    width: 35%;
+    background: #0a1f44;
+    color: white;
+    padding: 30px;
+}
+
+.left img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.left h3 {
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+.left p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* =========================
+   COLONNE DROITE
+========================= */
+.right {
+    width: 65%;
+    padding: 40px;
+    background: white;
+}
+
+.right h1 {
+    font-size: 32px;
+    color: #0a1f44;
+}
+
+.right h2 {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.right h3 {
+    margin-top: 25px;
+    color: #0a1f44;
+    border-bottom: 2px solid #0056ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.right p {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #0056ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #003bb5;
+}
+
+/* =========================
+   TEMPLATE MODERNE
+========================= */
+.cv.modern {
+    flex-direction: row-reverse;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    color: white;
+}
+
+.cv.modern .right {
+    background: transparent;
+    color: white;
+}
+
+.cv.modern .left {
+    background: transparent;
+}
+
+.cv.modern h1 {
+    color: #00e0ff;
+}
+
+.cv.modern h3 {
+    color: #00c6ff;
+}
+
+/* =========================
+   CACHE
+========================= */
+.hidden {
+    display: none;
+}
+/* =========================
+   PHOTO STYLE
+========================= */
+.left img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   ESPACEMENT PRO
+========================= */
+.left p, .right p {
+    margin-bottom: 10px;
+}
+
+/* =========================
+   TITRES MODERNES
+========================= */
+.right h3 {
+    position: relative;
+}
+
+.right h3::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #0056ff;
+    display: block;
+    margin-top: 5px;
+}
+
+/* =========================
+   BARRES DE COMPÉTENCES
+========================= */
+.skill-bar {
+    background: #ddd;
+    border-radius: 20px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 8px;
+    background: #00c6ff;
+    width: 80%;
+}
+
+/* =========================
+   HOVER CV
+========================= */
+.cv {
+    transition: 0.3s;
+}
+
+.cv:hover {
+    transform: scale(1.01);
+}
+
+/* =========================
+   FORMULAIRE PLUS PRO
+========================= */
+.form-box input:focus,
+.form-box textarea:focus {
+    border: 1px solid #0056ff;
+    outline: none;
+}
+
+/* =========================
+   BOUTONS PREMIUM
+========================= */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+/* =========================
+   MODELE CLASSIQUE
+========================= */
+.cv.classic {
+    flex-direction: row;
+}
+
+/* =========================
+   MODELE MODERNE
+========================= */
+.cv.modern {
+    flex-direction: row-reverse;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    color: white;
+}
+
+.cv.modern .right {
+    background: transparent;
+    color: white;
+}
+
+.cv.modern .left {
+    background: transparent;
+}
+
+/* =========================
+   MODELE PREMIUM (CANVA STYLE)
+========================= */
+.cv.premium {
+    display: flex;
+    background: white;
+}
+
+/* GAUCHE PREMIUM */
+.cv.premium .left {
+    background: #111;
+    color: #fff;
+}
+
+/* DROITE PREMIUM */
+.cv.premium .right {
+    background: #f9f9f9;
+}
+
+/* NOM PREMIUM */
+.cv.premium h1 {
+    color: #ff4b2b;
+}
+
+/* TITRES PREMIUM */
+.cv.premium h3 {
+    color: #ff4b2b;
+}
+
+/* BARRES PREMIUM */
+.cv.premium .skill-fill {
+    background: #ff4b2b;
+}
+/* ===== PREMIUM STYLE AVANCÉ ===== */
+.cv.premium .right {
+    padding: 50px;
+}
+
+.cv.premium h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.cv.premium h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* ligne décorative */
+.cv.premium .right h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #ff4b2b;
+    margin-top: 10px;
+}
+
+/* espacement sections */
+.cv.premium h3 {
+    margin-top: 30px;
+}
+
+/* texte plus propre */
+.cv.premium p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+.form-box input,
+.form-box textarea {
+    transition: 0.3s;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    border: 1px solid #ff4b2b;
+    box-shadow: 0 0 5px rgba(255,75,43,0.5);
+}
+/* MODERN */
+.cv.modern {
+    flex-direction: row-reverse;
+}
+
+.cv.modern .sidebar {
+    background: #222;
+}
+
+/* DARK */
+.cv.dark {
+    background: black;
+    color: white;
+}
+
+.cv.dark .sidebar {
+    background: #111;
+}
+
+/* CREATIVE */
+.cv.creative {
+    border: 5px solid #ff9800;
+    transform: rotate(-1deg);
+}
+/* BACKGROUND GLOBAL */
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+/* FORM */
+.form-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* INPUTS */
+input, textarea, select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* BUTTON STYLE */
+button {
+    padding: 12px 20px;
+    border: none;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* CV STYLE */
+.cv {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* GAUCHE */
+.sidebar {
+    width: 30%;
+    background: #1a237e;
+    color: white;
+    padding: 30px;
+}
+
+.sidebar img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* DROITE */
+.main {
+    width: 70%;
+    padding: 40px;
+}
+
+.main h1 {
+    color: #ff5722;
+}
+
+/* PREMIUM BADGE */
+.premium {
+    background: gold;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.pay-btn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.pay-btn:nth-child(2) {
+    background: #00c853; /* Wave */
+}
+
+.pay-btn:nth-child(3) {
+    background: #ff6d00; /* Orange */
+}
+/* ANIMATION GENERALE */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* HOVER SUR CV */
+.cv {
+    transition: 0.4s;
+}
+
+.cv:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* BOUTONS */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+.sidebar img {
+    transition: 0.4s;
+}
+
+.sidebar img:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+.hero h1 {
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #1ebe5d;
+}
