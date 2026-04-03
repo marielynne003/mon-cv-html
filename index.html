@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>CV Pro</title>
-
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
@@ -16,15 +13,12 @@
     <button onclick="showForm()">Créer mon CV</button>
 </header>
 
-<!-- HERO -->
-<div class="hero fade-in">
+<div class="hero">
     <h1>Crée un CV professionnel en 2 minutes</h1>
-    <p>Design moderne • Rapide • Gratuit</p>
-    <button onclick="showForm()">Commencer</button>
+    <p>Simple • Rapide • Moderne</p>
 </div>
 
-<!-- FORM -->
-<section id="form-section" class="form-box hidden fade-in">
+<section id="form-section" class="form-box hidden">
 
     <h2>Créer ton CV</h2>
 
@@ -35,56 +29,45 @@
     <input id="phone" placeholder="Téléphone">
     <input type="file" id="photo">
 
-    <textarea id="description" placeholder="Profil"></textarea>
+    <textarea id="description" placeholder="Profil professionnel"></textarea>
     <textarea id="skills" placeholder="Compétences"></textarea>
     <textarea id="languages" placeholder="Langues"></textarea>
     <textarea id="experience" placeholder="Expériences"></textarea>
     <textarea id="education" placeholder="Formation"></textarea>
     <textarea id="hobbies" placeholder="Centres d’intérêt"></textarea>
 
-    <!-- TEMPLATE -->
-   <label>Choisir un modèle :</label>
-<select id="template">
-    <option value="classic">Classique (Gratuit)</option>
-    <option value="modern">Moderne ⭐ Premium</option>
-    <option value="dark">Dark Pro ⭐ Premium</option>
-    <option value="creative">Créatif ⭐ Premium</option>
-</select>
-    <option value="classic">Classique</option>
-    <option value="modern">Moderne</option>
-</select>
+    <select id="template">
+        <option value="classic">Classique (Gratuit)</option>
+        <option value="modern">Moderne ⭐ Premium</option>
+        <option value="dark">Dark ⭐ Premium</option>
+    </select>
 
     <button onclick="generateCV()">Générer CV</button>
 
 </section>
 
-<!-- RESULTAT -->
-<section id="cv-result" class="hidden fade-in">
-<div class="cv" id="cv">
+<section id="cv-result" class="hidden">
 
-    <!-- GAUCHE -->
-    <div class="left">
+<div class="cv">
 
+    <div class="sidebar">
         <img id="cv-photo">
 
         <h3>Contact</h3>
-        <p><i class="fa fa-envelope"></i> <span id="cv-email"></span></p>
-        <p><i class="fa fa-phone"></i> <span id="cv-phone"></span></p>
+        <p id="cv-email"></p>
+        <p id="cv-phone"></p>
 
         <h3>Compétences</h3>
-        <div id="cv-skills"></div>
+        <p id="cv-skills"></p>
 
         <h3>Langues</h3>
         <p id="cv-languages"></p>
 
-        <h3>Centres d’intérêt</h3>
+        <h3>Intérêts</h3>
         <p id="cv-hobbies"></p>
-
     </div>
 
-    <!-- DROITE -->
-    <div class="right">
-
+    <div class="main">
         <h1 id="cv-name"></h1>
         <h2 id="cv-job"></h2>
 
@@ -97,55 +80,36 @@
         <h3>Formation</h3>
         <p id="cv-edu"></p>
 
-        <button onclick="downloadPDF()">Télécharger PDF</button>
-        <button onclick="payWave()" class="pay-btn">Payer avec Wave 💰</button>
-
-<button onclick="payOM()" class="pay-btn">Payer avec Orange Money 🟠</button>
-        <button onclick="downloadWord()">Télécharger Word</button>
+        <div id="actions"></div>
 
     </div>
 
 </div>
-<!-- BOUTON LETTRE -->
-<div style="text-align:center; margin-top:20px;">
-    <button onclick="showLetter()">Créer une lettre de motivation</button>
-</div>
 
-<!-- SECTION LETTRE -->
-<section id="letter-section" class="form-box hidden">
+<button onclick="showLetter()">Créer une lettre de motivation</button>
 
+</section>
+
+<!-- LETTRE -->
+<section id="letter-section" class="hidden">
     <h2>Lettre de motivation</h2>
-
-    <input id="company" placeholder="Nom de l'entreprise">
-    <input id="position" placeholder="Poste visé">
-
-    <button onclick="generateLetter()">Générer lettre</button>
-
+    <button onclick="generateLetter()">Générer</button>
 </section>
 
-<!-- RESULTAT LETTRE -->
 <section id="letter-result" class="hidden">
+    <div class="letter-box" id="letter-box">
+        <p id="letter-content"></p>
 
-    <div class="cv">
-        <div class="main">
-            <h2>Lettre de motivation</h2>
-            <p id="letter-content"></p>
-
-            <button onclick="downloadLetter()">Télécharger PDF</button>
-            <button onclick="goPremium()" style="background: gold; color: black;">
-⭐ Passer en Premium
-</button>
-        </div>
+        <button onclick="downloadLetterPDF()">📄 Télécharger PDF</button>
+        <button onclick="downloadLetterWord()">📝 Télécharger Word</button>
     </div>
-
 </section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/2250758810609" class="whatsapp">💬</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 <script src="script.js"></script>
-<a href="https://wa.me/2250758810609?text=Bonjour%20je%20veux%20un%20CV%20premium"
-   class="whatsapp-float"
-   target="_blank">
-   💬 Chat
-</a>
+
 </body>
 </html>
