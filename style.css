@@ -1,491 +1,106 @@
-/* =========================
-   RESET
-========================= */
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
 }
 
-body {
-    background: #f0f2f5;
-}
-
-/* =========================
-   NAVBAR
-========================= */
+/* HEADER */
 .topbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: linear-gradient(120deg, #0056ff, #00c6ff);
-    color: white;
-}
-
-.topbar button {
-    background: white;
-    color: #0056ff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    height: 90vh;
-    background: linear-gradient(120deg, #0056ff, #00c6ff);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 40px;
-}
-
-.hero p {
-    margin: 15px 0;
-}
-
-.hero button {
-    padding: 15px 30px;
-    border: none;
-    background: white;
-    color: #0056ff;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* =========================
-   FORMULAIRE
-========================= */
-.form-box {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.form-box h2 {
-    margin-bottom: 20px;
-}
-
-.form-box input,
-.form-box textarea,
-.form-box select {
-    width: 100%;
     padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-}
-
-.form-box textarea {
-    min-height: 80px;
-}
-
-/* =========================
-   CV STRUCTURE
-========================= */
-.cv {
-    display: flex;
-    max-width: 1000px;
-    margin: 40px auto;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* =========================
-   COLONNE GAUCHE
-========================= */
-.left {
-    width: 35%;
-    background: #0a1f44;
+    background: #000;
     color: white;
-    padding: 30px;
-}
-
-.left img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-.left h3 {
-    margin-top: 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    padding-bottom: 5px;
-    font-size: 16px;
-}
-
-.left p {
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* =========================
-   COLONNE DROITE
-========================= */
-.right {
-    width: 65%;
-    padding: 40px;
-    background: white;
-}
-
-.right h1 {
-    font-size: 32px;
-    color: #0a1f44;
-}
-
-.right h2 {
-    color: gray;
-    margin-bottom: 20px;
-}
-
-.right h3 {
-    margin-top: 25px;
-    color: #0a1f44;
-    border-bottom: 2px solid #0056ff;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.right p {
-    margin-top: 10px;
-    line-height: 1.6;
-}
-
-/* =========================
-   BOUTONS
-========================= */
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #0056ff;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: #003bb5;
-}
-
-/* =========================
-   TEMPLATE MODERNE
-========================= */
-.cv.modern {
-    flex-direction: row-reverse;
-    background: linear-gradient(120deg, #1e3c72, #2a5298);
-    color: white;
-}
-
-.cv.modern .right {
-    background: transparent;
-    color: white;
-}
-
-.cv.modern .left {
-    background: transparent;
-}
-
-.cv.modern h1 {
-    color: #00e0ff;
-}
-
-.cv.modern h3 {
-    color: #00c6ff;
-}
-
-/* =========================
-   CACHE
-========================= */
-.hidden {
-    display: none;
-}
-/* =========================
-   PHOTO STYLE
-========================= */
-.left img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-/* =========================
-   ESPACEMENT PRO
-========================= */
-.left p, .right p {
-    margin-bottom: 10px;
-}
-
-/* =========================
-   TITRES MODERNES
-========================= */
-.right h3 {
-    position: relative;
-}
-
-.right h3::after {
-    content: "";
-    width: 50px;
-    height: 3px;
-    background: #0056ff;
-    display: block;
-    margin-top: 5px;
-}
-
-/* =========================
-   BARRES DE COMPÉTENCES
-========================= */
-.skill-bar {
-    background: #ddd;
-    border-radius: 20px;
-    margin-top: 8px;
-    overflow: hidden;
-}
-
-.skill-fill {
-    height: 8px;
-    background: #00c6ff;
-    width: 80%;
-}
-
-/* =========================
-   HOVER CV
-========================= */
-.cv {
-    transition: 0.3s;
-}
-
-.cv:hover {
-    transform: scale(1.01);
-}
-
-/* =========================
-   FORMULAIRE PLUS PRO
-========================= */
-.form-box input:focus,
-.form-box textarea:focus {
-    border: 1px solid #0056ff;
-    outline: none;
-}
-
-/* =========================
-   BOUTONS PREMIUM
-========================= */
-button {
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: translateY(-2px);
-}
-/* =========================
-   MODELE CLASSIQUE
-========================= */
-.cv.classic {
-    flex-direction: row;
-}
-
-/* =========================
-   MODELE MODERNE
-========================= */
-.cv.modern {
-    flex-direction: row-reverse;
-    background: linear-gradient(120deg, #1e3c72, #2a5298);
-    color: white;
-}
-
-.cv.modern .right {
-    background: transparent;
-    color: white;
-}
-
-.cv.modern .left {
-    background: transparent;
-}
-
-/* =========================
-   MODELE PREMIUM (CANVA STYLE)
-========================= */
-.cv.premium {
-    display: flex;
-    background: white;
-}
-
-/* GAUCHE PREMIUM */
-.cv.premium .left {
-    background: #111;
-    color: #fff;
-}
-
-/* DROITE PREMIUM */
-.cv.premium .right {
-    background: #f9f9f9;
-}
-
-/* NOM PREMIUM */
-.cv.premium h1 {
-    color: #ff4b2b;
-}
-
-/* TITRES PREMIUM */
-.cv.premium h3 {
-    color: #ff4b2b;
-}
-
-/* BARRES PREMIUM */
-.cv.premium .skill-fill {
-    background: #ff4b2b;
-}
-/* ===== PREMIUM STYLE AVANCÉ ===== */
-.cv.premium .right {
-    padding: 50px;
-}
-
-.cv.premium h1 {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.cv.premium h2 {
-    font-size: 18px;
-    letter-spacing: 2px;
-}
-
-/* ligne décorative */
-.cv.premium .right h1::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: #ff4b2b;
-    margin-top: 10px;
-}
-
-/* espacement sections */
-.cv.premium h3 {
-    margin-top: 30px;
-}
-
-/* texte plus propre */
-.cv.premium p {
-    font-size: 15px;
-    line-height: 1.8;
-}
-.form-box input,
-.form-box textarea {
-    transition: 0.3s;
-}
-
-.form-box input:focus,
-.form-box textarea:focus {
-    border: 1px solid #ff4b2b;
-    box-shadow: 0 0 5px rgba(255,75,43,0.5);
-}
-/* MODERN */
-.cv.modern {
-    flex-direction: row-reverse;
-}
-
-.cv.modern .sidebar {
-    background: #222;
-}
-
-/* DARK */
-.cv.dark {
-    background: black;
-    color: white;
-}
-
-.cv.dark .sidebar {
-    background: #111;
-}
-
-/* CREATIVE */
-.cv.creative {
-    border: 5px solid #ff9800;
-    transform: rotate(-1deg);
-}
-/* BACKGROUND GLOBAL */
-body {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-}
-
-/* TOPBAR */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    backdrop-filter: blur(10px);
 }
 
 /* HERO */
 .hero {
     text-align: center;
     color: white;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-}
-
-.hero p {
-    margin: 10px 0;
+    padding: 50px;
 }
 
 /* FORM */
 .form-box {
-    max-width: 900px;
-    margin: 40px auto;
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
-/* INPUTS */
 input, textarea, select {
     width: 100%;
-    padding: 15px;
     margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    padding: 10px;
 }
 
-/* BUTTON STYLE */
-button {
-    padding: 12px 20px;
-    border: none;
-    background: linear-gradient(135deg, #ff9800, #ff5722);
+/* CV */
+.cv {
+    display: flex;
+    margin: 20px;
+    background: white;
+}
+
+.sidebar {
+    width: 30%;
+    background: #0a1f44;
     color: white;
-    font-weight: bold;
-    border-radius: 8px;
+    padding: 20px;
+}
+
+.main {
+    width: 70%;
+    padding: 20px;
+}
+
+/* BUTTON */
+button {
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: white;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+/* PREMIUM */
+.premium-box {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.hidden {
+    display: none;
+}   
+/* STYLE PREMIUM */
+.premium-style {
+    background: linear-gradient(120deg, #000, #2c3e50);
+    color: white;
+}
+
+.premium-style .sidebar {
+    background: black;
+}
+
+.premium-style .main {
+    background: #1e1e1e;
+}
+
+/* AMELIORATION */
+button {
+    border-radius: 5px;
     transition: 0.3s;
 }
 
@@ -493,131 +108,198 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* CV STYLE */
-.cv {
-    display: flex;
-    max-width: 1000px;
-    margin: 50px auto;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* GAUCHE */
-.sidebar {
-    width: 30%;
-    background: #1a237e;
-    color: white;
-    padding: 30px;
-}
-
+/* IMAGE */
 .sidebar img {
     width: 120px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+/* =====================
+   DARK STYLE PRO
+===================== */
+.dark-style {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
 }
 
-/* DROITE */
-.main {
-    width: 70%;
-    padding: 40px;
+.dark-style .sidebar {
+    background: black;
+    border-right: 2px solid cyan;
 }
 
-.main h1 {
-    color: #ff5722;
+.dark-style .main {
+    background: rgba(255,255,255,0.05);
 }
 
-/* PREMIUM BADGE */
-.premium {
-    background: gold;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-.pay-btn {
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
+.dark-style h1 {
+    color: cyan;
 }
 
-.pay-btn:nth-child(2) {
-    background: #00c853; /* Wave */
+.dark-style h3 {
+    color: #00f2fe;
+    border-bottom: 1px solid cyan;
 }
 
-.pay-btn:nth-child(3) {
-    background: #ff6d00; /* Orange */
+.dark-style img {
+    border: 3px solid cyan;
+    box-shadow: 0 0 15px cyan;
 }
-/* ANIMATION GENERALE */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
+
+/* SIDEBAR PREMIUM */
+.premium-style .sidebar {
+    background: linear-gradient(180deg, #000000, #1a1a1a);
+    border-right: 2px solid #00c6ff;
+}
+
+/* PHOTO PREMIUM */
+.premium-style .sidebar img {
+    border: 3px solid #00c6ff;
+    box-shadow: 0 0 15px #00c6ff;
+}
+
+/* MAIN PREMIUM */
+.premium-style .main {
+    background: rgba(255,255,255,0.05);
+}
+
+/* TITRES */
+.premium-style h1 {
+    color: #00c6ff;
+    font-size: 28px;
+}
+
+.premium-style h3 {
+    color: #00f2fe;
+    border-bottom: 1px solid #00c6ff;
+    padding-bottom: 5px;
+}
+
+/* TEXTE */
+.premium-style p {
+    color: #e0e0e0;
+}
+
+/* BOUTONS PREMIUM */
+.premium-style button {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.premium-style button:hover {
+    transform: scale(1.08);
+}
+
+/* ANIMATION */
+.premium-style {
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
 }
-/* HOVER SUR CV */
-.cv {
-    transition: 0.4s;
-}
-
-.cv:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+/* =====================
+   MODERNE STYLE
+===================== */
+.modern-style {
+    background: #ffffff;
+    color: #333;
 }
 
-/* BOUTONS */
-button {
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.08);
-}
-.sidebar img {
-    transition: 0.4s;
-}
-
-.sidebar img:hover {
-    transform: rotate(5deg) scale(1.1);
-}
-.hero h1 {
-    animation: slideDown 1s ease;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
+.modern-style .sidebar {
+    background: #0056ff;
     color: white;
-    font-size: 30px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    z-index: 100;
-    transition: 0.3s;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background: #1ebe5d;
+.modern-style .main {
+    background: #f9f9f9;
+}
+
+.modern-style h1 {
+    color: #0056ff;
+}
+
+.modern-style h3 {
+    border-bottom: 2px solid #0056ff;
+}
+.classic-style {
+    display:flex;
+}
+.modern-style {
+    display:block;
+    background:#f9fafc;
+    padding:20px;
+}
+
+/* HEADER */
+.modern-style .main h1 {
+    font-size:30px;
+    color:#222;
+}
+
+.modern-style .main h2 {
+    color:#007bff;
+}
+
+/* CARDS */
+.modern-style .main,
+.modern-style .sidebar {
+    width:100%;
+    background:white;
+    margin-bottom:15px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.modern-style img {
+    width:100px;
+    border-radius:10px;
+}
+
+/* GRID */
+.modern-style {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
+}
+.dark-style {
+    display:flex;
+    flex-direction:row-reverse;
+    background:#0a0a0a;
+    color:white;
+}
+
+/* SIDEBAR */
+.dark-style .sidebar {
+    background:#111;
+    border-left:2px solid #00f2fe;
+}
+
+/* MAIN */
+.dark-style .main {
+    background:#1a1a1a;
+}
+
+/* TITRES */
+.dark-style h1 {
+    color:#00f2fe;
+}
+
+.dark-style h3 {
+    color:#00c6ff;
+    border-bottom:1px solid #00f2fe;
+}
+
+/* PHOTO */
+.dark-style img {
+    border:2px solid #00f2fe;
+    box-shadow:0 0 10px #00f2fe;
+}
+
+/* EFFET LUXE */
+.dark-style {
+    box-shadow:0 0 40px rgba(0,255,255,0.2);
 }
