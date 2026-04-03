@@ -1,26 +1,16 @@
-function showForm() {
-    let form = document.getElementById("form-section");
-
-    form.classList.remove("hidden");
-    form.style.animation = "fadeIn 1s forwards";
+function showForm(){
+    document.getElementById("form-section").classList.remove("hidden");
 }
 
-function generateCV() {
+function generateCV(){
 
     let template = document.getElementById("template").value;
 
-    // 🔒 Bloquer premium
-    if(template !== "classic"){
-        alert("Ce modèle est premium ⭐. Contactez-moi sur WhatsApp : +225XXXXXXXX");
-        return;
-    }
-
-    // INFOS
     let nom = document.getElementById("nom").value;
     let prenom = document.getElementById("prenom").value;
     let email = document.getElementById("email").value;
-    let job = document.getElementById("job").value;
     let phone = document.getElementById("phone").value;
+    let job = document.getElementById("job").value;
 
     let description = document.getElementById("description").value;
     let skills = document.getElementById("skills").value;
@@ -29,17 +19,10 @@ function generateCV() {
     let education = document.getElementById("education").value;
     let hobbies = document.getElementById("hobbies").value;
 
-    // Vérification
-    if(nom === "" || prenom === "" || email === ""){
-        alert("Remplis les informations importantes !");
-        return;
-    }
-
-    // Injection données
     document.getElementById("cv-name").innerText = prenom + " " + nom;
     document.getElementById("cv-email").innerText = email;
-    document.getElementById("cv-job").innerText = job;
     document.getElementById("cv-phone").innerText = phone;
+    document.getElementById("cv-job").innerText = job;
 
     document.getElementById("cv-description").innerText = description;
     document.getElementById("cv-skills").innerText = skills;
@@ -50,7 +33,6 @@ function generateCV() {
 
     // PHOTO
     let photo = document.getElementById("photo").files[0];
-
     if(photo){
         let reader = new FileReader();
         reader.onload = function(e){
@@ -59,62 +41,108 @@ function generateCV() {
         reader.readAsDataURL(photo);
     }
 
-    // Afficher CV
     document.getElementById("cv-result").classList.remove("hidden");
 
-    // 🎨 Appliquer modèle
-    let cv = document.querySelector(".cv");
+    let actions = document.getElementById("actions");
 
-    cv.classList.remove("modern", "dark", "creative");
+    // ======================
+    // CLASSIQUE (GRATUIT)
+    // ======================
+    if(template === "classic"){
 
-    if(template === "modern"){
-        cv.classList.add("modern");
+        document.querySelector(".cv").classList.remove("premium-style");
+
+        actions.innerHTML = `
+        <button onclick="downloadPDF()">📄 Télécharger PDF</button>
+        <button onclick="downloadWord()">📝 Télécharger Word</button>
+        `;
     }
 
-    if(template === "dark"){
-        cv.classList.add("dark");
-    }
+    // ======================
+    // PREMIUM
+    // ======================
+ // RESET
+let cv = document.querySelector(".cv");
+cv.classList.remove("classic-style","modern-style","dark-style");
 
-    if(template === "creative"){
-        cv.classList.add("creative");
-    }
+// CLASSIQUE
+if(template === "classic"){
+
+    cv.classList.add("classic-style");
+
+    actions.innerHTML = `
+    <button onclick="downloadPDF()">📄 PDF</button>
+    <button onclick="downloadWord()">📝 Word</button>
+    `;
 }
 
-// 📄 PDF
-function downloadPDF() {
-    const element = document.querySelector(".cv");
+// MODERNE
+else if(template === "modern"){
 
-    const opt = {
-        margin: 0,
-        filename: 'mon_cv.pdf',
-        html2canvas: { scale: 3 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
+    cv.classList.add("modern-style");
 
-    html2pdf().set(opt).from(element).save();
+    actions.innerHTML = `
+    <div class="premium-box">
+        <h3>✨ Modèle Moderne</h3>
+        <p>Design style Canva, clair et professionnel</p>
+        <button onclick="premiumDownload()">Télécharger</button>
+    </div>
+    `;
 }
 
-// 💰 PREMIUM
-function goPremium() {
-    alert("Pour débloquer les modèles premium ⭐ contactez-moi sur WhatsApp : +225XXXXXXXX");
+// DARK
+else if(template === "dark"){
+
+    cv.classList.add("dark-style");
+
+    actions.innerHTML = `
+    <div class="premium-box">
+        <h3>🌑 Modèle Dark</h3>
+        <p>Design sombre et élégant haut niveau</p>
+        <button onclick="premiumDownload()">Télécharger</button>
+    </div>
+    `;
+}
 }
 
-// 📄 WORD
-function downloadWord() {
+// ======================
+// TELECHARGEMENT GRATUIT
+// ======================
+function downloadPDF(){
+    html2pdf().from(document.querySelector(".cv")).save();
+}
+
+function downloadWord(){
     let content = document.querySelector(".cv").innerText;
 
-    let blob = new Blob([content], {
-        type: "application/msword"
-    });
-
+    let blob = new Blob([content], {type:"application/msword"});
     let link = document.createElement("a");
+
     link.href = URL.createObjectURL(blob);
-    link.download = "mon_cv.doc";
+    link.download = "cv.doc";
     link.click();
 }
 
-// 📄 LETTRE DE MOTIVATION
-function generateLetter() {
+// ======================
+// PREMIUM → PAIEMENT
+// ======================
+function premiumDownload(){
+
+    let msg = "Bonjour, je veux payer le CV Premium (1000F) via Wave ou Orange Money";
+
+    alert("Ce modèle est Premium.\nPaiement requis avant téléchargement.");
+
+    window.open("https://wa.me/2250758810609?text=" + encodeURIComponent(msg));
+}
+
+// ======================
+// LETTRE PRO
+// ======================
+function showLetter(){
+    document.getElementById("letter-section").classList.remove("hidden");
+}
+
+function generateLetter(){
 
     let nom = document.getElementById("nom").value;
     let prenom = document.getElementById("prenom").value;
@@ -125,31 +153,36 @@ Objet : Candidature au poste de ${job}
 
 Madame, Monsieur,
 
-Je me permets de vous adresser ma candidature pour le poste de ${job}.
+Titulaire d’une formation solide et animé par une forte motivation, je me permets de vous adresser ma candidature pour le poste de ${job}.
 
-Motivé, sérieux et passionné, je souhaite mettre mes compétences au service de votre entreprise.
+Au cours de mon parcours, j’ai acquis des compétences en organisation, rigueur et travail en équipe. Je suis une personne sérieuse, dynamique et capable de m’adapter rapidement aux exigences professionnelles.
 
-Je serais honoré de pouvoir vous rencontrer lors d’un entretien.
+Intégrer votre entreprise représente pour moi une réelle opportunité de mettre en pratique mes compétences et de contribuer à votre développement.
 
-Dans l’attente de votre réponse, veuillez agréer mes salutations distinguées.
+Je reste disponible pour un entretien afin de vous démontrer ma motivation.
+
+Dans l’attente de votre retour, veuillez agréer, Madame, Monsieur, l’expression de mes salutations distinguées.
 
 ${prenom} ${nom}
     `;
 
     document.getElementById("letter-content").innerText = text;
+    document.getElementById("letter-result").classList.remove("hidden");
 }
-function payWave() {
-    alert(
-        "💰 Paiement Wave\n\n" +
-        "Envoyez 1000 FCFA au numéro : +2250758810609\n\n" +
-        "Puis envoyez la preuve sur WhatsApp pour recevoir votre CV premium."
-    );
+// ======================
+// TELECHARGEMENT LETTRE
+// ======================
+function downloadLetterPDF(){
+    html2pdf().from(document.getElementById("letter-box")).save("lettre_motivation.pdf");
 }
 
-function payOM() {
-    alert(
-        "🟠 Paiement Orange Money\n\n" +
-        "Envoyez 1000 FCFA au numéro : +2250758810609\n\n" +
-        "Puis envoyez la preuve sur WhatsApp pour recevoir votre CV premium."
-    );
+function downloadLetterWord(){
+    let content = document.getElementById("letter-box").innerText;
+
+    let blob = new Blob([content], {type:"application/msword"});
+    let link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "lettre_motivation.doc";
+    link.click();
 }
